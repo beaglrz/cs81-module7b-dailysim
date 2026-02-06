@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    const output = document.getElementById("output");
+    
+    const events = [
+  "9:00 AM — Wake up, scroll on social media, then get out of bed and do morning stretches 📱🧘",
+      "9:30 AM — Shower and get ready for the day 🚿",
+      "10:15 AM — Make breakfast and take vitamins 🍳💊",
+      "11:00 AM — Work / study session 📚",
+      "3:00 PM — Break time (nap) 😴",
+      "4:00 PM — Work / study session 💻",
+      "6:00 PM — Eat a snack, then go to the gym 🏋️‍♀️",
+      "7:30 PM — Dinner time and relax 🍽️😌",
+      "11:00 PM — Go to bed 🛏️"
+];
+
+  // Delay between events
+    const delay = 1000; // 1 second
+
+    // Loop through events and display them one by one
+    events.forEach((event, index) => {
+      setTimeout(() => {
+        // Create a new line for each event
+        const line = document.createElement("div");
+        line.textContent = event;
+
+        // Add the line below the previous ones
+        output.appendChild(line);
+      }, delay * (index + 1));
+    });
+  </script>
+
+</body>
+</html>
